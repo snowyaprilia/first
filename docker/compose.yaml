@@ -1,0 +1,15 @@
+services:
+  jango-bulk:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: jango-bulk
+    restart: unless-stopped
+    command: ["serve", "--addr", "0.0.0.0:20581", "--store", "/data/data/accounts.json"]
+    ports:
+      - "20581:20581"
+    volumes:
+      - ./data:/data/data
+    env_file:
+      - path: .env
+        required: false

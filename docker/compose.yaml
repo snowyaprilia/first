@@ -1,7 +1,7 @@
 services:
   jango-bulk:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile
     container_name: jango-bulk
     restart: unless-stopped
@@ -10,6 +10,3 @@ services:
       - "20581:20581"
     volumes:
       - ./data:/data/data
-    env_file:
-      - path: .env
-        required: false

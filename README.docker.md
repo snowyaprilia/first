@@ -12,14 +12,9 @@ we build the Go binary inside a container and run it with `serve`.
 ## How to use in Dockge
 
 1. In Dockge, click **+ Compose** (top right) and name the stack `jango-bulk`.
-2. Paste the contents of `docker/compose.yaml` into the editor, replacing the default.
-3. Make sure the build context path (`context: ..`) matches where you placed the
-   repo checkout relative to the stack folder. The easiest path: clone
-   `jango-bulk` into `/opt/stacks/jango-bulk/repo`, and put `compose.yaml` in
-   `/opt/stacks/jango-bulk/compose.yaml` (i.e. leave `context: ..` pointing at
-   `/opt/stacks/jango-bulk`), then copy `docker/Dockerfile` to
-   `/opt/stacks/jango-bulk/docker/Dockerfile`.
-4. Click **Deploy**. Dockge runs `docker compose up -d --build` for you.
+2. Paste the contents of `docker/compose.yaml` into the stack editor (the file
+   sits at the stack root, next to `repo/` and `docker/`).
+3. Click **Deploy**. Dockge runs `docker compose up -d --build` for you.
 
 ## Files
 
